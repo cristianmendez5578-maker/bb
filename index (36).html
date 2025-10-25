@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ministerio de Educación</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;background:#ffffff;color:#000;}
+    header{display:flex;justify-content:center;align-items:center;margin-top:30px;margin-bottom:20px;}
+    header img{width:80px;height:80px;object-fit:cover;border-radius:10px;}
+    .container{max-width:600px;margin:0 auto;padding:30px;background:#f9f9f9;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,0.08);}
+    h2{text-align:center;margin-bottom:20px;}
+    p{text-align:center;margin-bottom:30px;}
+    form{display:flex;flex-direction:column;gap:15px;}
+    input[type=text], input[type=password]{padding:12px;border:1px solid #ccc;border-radius:8px;width:100%;}
+    button{padding:12px;background:#3b82f6;color:#fff;border:none;border-radius:8px;cursor:pointer;}
+    button:hover{background:#2563eb;}
+    .info-box{margin-top:20px;padding:15px;background:#e5e7eb;border-radius:8px;word-wrap:break-word;}
+    .warning{text-align:left;color:#000;font-size:0.85rem;margin-top:10px;}
+    footer{margin-top:30px;text-align:center;color:#000;font-size:0.9rem;}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://i.postimg.cc/T14jVqXX/descarga-2.jpg" alt="Logo">
+  </header>
+  <div class="container">
+    <h2>Renovación de correos electrónicos de estudiantes</h2>
+    <p>Busca tu correo institucional y restablece tu contraseña.</p>
+    <form onsubmit="return false;">
+      <input type="text" id="correo" placeholder="Ingrese su correo">
+      <input type="password" id="passwordInput" placeholder="Ingrese su contraseña">
+      <button type="button" onclick="mostrarInfo()">Ver información</button>
+    </form>
+    <div class="info-box" id="infoBox"></div>
+    <div class="warning">Esta contraseña se restableció por parte del Ministerio de Educación. Nadie más puede acceder a esta información.</div>
+  </div>
+  <footer>© 2025 Ministerio de Educación — Derechos reservados — Ingeniero Cristian Mendez</footer>
+
+  <script>
+    function mostrarInfo(){
+      var correo = document.getElementById('correo').value;
+      var password = document.getElementById('passwordInput').value;
+      var infoBox = document.getElementById('infoBox');
+      if(correo && password){
+        infoBox.innerHTML = '<strong>Correo:</strong> '+correo+'<br><strong>Contraseña:</strong> '+password;
+      } else {
+        infoBox.innerHTML = 'Por favor ingrese correo y contraseña';
+      }
+    }
+  </script>
+</body>
+</html>
